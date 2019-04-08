@@ -1,0 +1,14 @@
+.digits-background {
+  background: url("https://bloximages.newyork1.vip.townnews.com/manoanow.org/content/tncms/assets/v3/editorial/d/01/d0128336-30e2-11e5-83d9-6b99e9ddd672/55b052344f4ec.image.jpg?resize=1200%2C795") no-repeat center center;
+  background-size: cover;
+}
+
+.large.text {
+  color: white;
+  font-size: 15rem;
+}
+
+.description{
+  padding-top: 50px;
+  padding-bottom: 20px;
+}

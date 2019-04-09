@@ -5,9 +5,9 @@ export default class Description extends React.Component {
   render() {
     return (
         <div className="description">
-          <Grid container stackable centered rows>
+          <Grid container stackable rows={6}>
 
-            <Grid.Row>
+            <Grid.Row centered>
               <Header as="h1"> About Boujee Foodie</Header>
             </Grid.Row>
 
@@ -28,16 +28,15 @@ export default class Description extends React.Component {
             </Grid.Row>
 
             <Grid.Row>
-              <Header as="h4">
-                What specific menu items will be available today at campus center locations; </Header>
+              <p> - What specific menu items will be available today at campus center locations; </p>
             </Grid.Row>
 
             <Grid.Row>
-              <Header as="h4"> What food is available right now.</Header>
+              <p> - What food is available right now.</p>
             </Grid.Row>
 
             <Grid.Row>
-              <Header as="h4"> When a style of food you love is available today.</Header>
+              <p> - When a style of food you love is available today.</p>
             </Grid.Row>
           </Grid>
         </div>

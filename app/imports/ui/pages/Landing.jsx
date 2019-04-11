@@ -25,7 +25,7 @@ class Landing extends React.Component {
                     paddingTop: '30px',
                 }}>List of Restaurants</Header>
                 <hr/>
-                <Card.Group>
+                <Card.Group centered>
                     <Card
                         image='/images/sistahtruck.jpg'
                         header='Sistah`s Food Truck'

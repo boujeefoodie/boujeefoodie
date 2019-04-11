@@ -1,3 +1,3 @@
 # Boujee Foodie
-[about Boujee Foodie](https://boujeefoodie.github.io/)
+[About Boujee Foodie](https://boujeefoodie.github.io/)
 

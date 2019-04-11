@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
+import { Bert } from 'meteor/themeteorchef:bert';
+
 
 /**
  * Signin page overrides the form’s submit event and call Meteor’s loginWithPassword().
@@ -31,6 +33,7 @@ export default class Signin extends React.Component {
     Meteor.loginWithPassword(email, password, (err) => {
       if (err) {
         this.setState({ error: err.reason });
+        Bert.alert({ type: 'danger', message: 'Login Failed' });
       } else {
         this.setState({ error: '', redirectToReferer: true });
       }
@@ -50,7 +53,7 @@ export default class Signin extends React.Component {
           <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
             <Grid.Column>
               <Header as="h2" textAlign="center">
-                Login to your account
+                Login to Boujee Foodie
               </Header>
               <Form onSubmit={this.handleSubmit}>
                 <Segment stacked>
@@ -60,7 +63,7 @@ export default class Signin extends React.Component {
                       iconPosition="left"
                       name="email"
                       type="email"
-                      placeholder="E-mail address"
+                      placeholder="Email"
                       onChange={this.handleChange}
                   />
                   <Form.Input
@@ -76,17 +79,16 @@ export default class Signin extends React.Component {
                 </Segment>
               </Form>
               <Message>
-                <Link to="/signup">Click here to Register</Link>
+                <Link to="/signup">Click here to Sign Up</Link>
               </Message>
               {this.state.error === '' ? (
                   ''
-              ) : (
-                  <Message
-                      error
-                      header="Login was not successful"
-                      content={this.state.error}
-                  />
-              )}
+              ) : (<Message
+                  error
+                  header="Login was not successful"
+                  content={this.state.error}
+              />)
+              }
             </Grid.Column>
           </Grid>
         </Container>

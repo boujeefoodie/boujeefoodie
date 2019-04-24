@@ -33,7 +33,7 @@ class ListRestaurants extends React.Component {
       description: 'Taco taco taco',
       tags: ['American', 'Donuts', 'Coffee', 'Breakfast'],
       price: '$$',
-    }
+    },
   ]
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */

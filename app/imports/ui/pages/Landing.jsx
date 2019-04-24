@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid, Search, Card, Header, Container } from 'semantic-ui-react';
 import MiddleMenu from '../components/MiddleMenu';
 import Description from '../components/Description';
+import SearchBarCustom from '../components/SearchBarCustom';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -11,12 +12,11 @@ class Landing extends React.Component {
           <MiddleMenu/>
         <Grid verticalAlign='middle' textAlign='center' container>
             <div className='landing-main'>
-                <Search
+                <SearchBarCustom
                     style={{
                         paddingTop: '30px',
                         width: '500px',
                         }}
-                    input = {{ fluid: true }}
                     placeholder = "Find..."
                     />
             </div>

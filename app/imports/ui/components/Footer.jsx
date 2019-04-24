@@ -38,7 +38,7 @@ class Footer extends React.Component {
                       <hr/>
                       <List.Item> Sign Up for the Latest Updates </List.Item>
                       <Input placeholder="Enter Email Address"/>
-                      <Label color="gray"> Join </Label>
+                      <Label color="grey"> Join </Label>
                     </List>
                   </Grid.Column>
 

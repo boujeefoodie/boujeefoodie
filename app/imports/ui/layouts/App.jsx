@@ -13,7 +13,7 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import Description from '../components/Description';
-import AddRestaurant from '../pages/AddRestaurant';
+import AddRestaurantAdmin from '../pages/AddRestaurantAdmin';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -26,8 +26,8 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
-              <Route path="/add" component={AddRestaurant}/>
-              <Route path="/list" component={ListRestaurants}/>
+              <ProtectedRoute path="/list" component={ListRestaurants}/>
+              <AdminProtectedRoute path="/add" component={AddRestaurantAdmin}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>

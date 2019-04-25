@@ -36,8 +36,8 @@ class AddStuff extends React.Component {
   /** On submit, insert the data. */
   submit(data) {
     const { name, address, image, description, price } = data;
-    const owner = Meteor.user().username;
-    Restaurants.insert({ name, address, image, description, price, owner }, this.insertCallback);
+
+    Restaurants.insert({ name, address, image, description, price }, this.insertCallback);
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */

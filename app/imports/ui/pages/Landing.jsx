@@ -1,4 +1,5 @@
 import React from 'react';
+import { GoogleMap, Marker } from "react-google-maps"
 import { Grid, Search, Card, Header, Container } from 'semantic-ui-react';
 import MiddleMenu from '../components/MiddleMenu';
 import Description from '../components/Description';
@@ -23,7 +24,7 @@ class Landing extends React.Component {
             <Container>
                 <Header style={{
                     paddingTop: '30px',
-                }}>List of Restaurants</Header>
+                }}>Top 3 Restaurants of this Month</Header>
                 <hr/>
                 <Card.Group centered>
                     <Card

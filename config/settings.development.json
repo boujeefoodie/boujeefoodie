@@ -12,38 +12,13 @@
   ],
   "defaultData": [
     {
-      "name": "Basket",
-      "quantity": 3,
-      "owner": "john@foo.com",
-      "condition": "excellent"
-    },
-    {
-      "name": "Bicycle",
-      "quantity": 2,
-      "owner": "john@foo.com",
-      "condition": "poor"
-    },
-    {
-      "name": "Banana",
-      "quantity": 2,
-      "owner": "admin@foo.com",
-      "condition": "good"
-    },
-    {
-      "name": "Boogie Board",
-      "quantity": 2,
-      "owner": "admin@foo.com",
-      "condition": "excellent"
-    }
-  ],
-  "defaultRestaurants": [
-    {
       "name": "Sistah`s Food Truck",
       "address": "POST",
       "image": "/images/sistahtruck.jpg",
       "description": "Sistah's Food Truck is a highly-reviewed fast-food restaurant. The customers' favorite would definitely be their chicken katsu and unique special sauce. Whenever you pass by the truck, lines of people are waiting and menu items are sold out.",
       "tags": "Asian, Korean, Lunch",
       "price": "$"
+
     },
     {
       "name": "Kamitoku Ramen Truck",
@@ -52,6 +27,7 @@
       "description": "Kamitoku provides the cheap goods to your Japanese cuisine cravings, serving food items such as ramen and beef bowls.",
       "tags": "Asian, Japanese, Ramen",
       "price": "$$$"
+
     },
     {
       "name": "Hot Tacos Truck",

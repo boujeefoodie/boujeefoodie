@@ -14,6 +14,7 @@ class Footer extends React.Component {
     }
   }
 
+
   render() {
     const divStyle = { paddingTop: '15px', background: '#009443', color: 'white' };
     return (

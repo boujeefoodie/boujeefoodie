@@ -9,33 +9,6 @@ import PropTypes from 'prop-types';
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListRestaurants extends React.Component {
 
-  restaurants = [
-    {
-      name: 'Sistah`s Food Truck',
-      address: 'POST',
-      image: '/images/sistahtruck.jpg',
-      description: 'A food truck with chicken katsu',
-      tags: 'Asian, Korean, Lunch',
-      price: '$',
-    },
-    {
-      name: 'Kamitoku Ramen Truck',
-      address: 'POST',
-      image: '/images/kamitoku.jpg',
-      description: 'Ramen and beef bowls ',
-      tags: 'Asian, Japanese, Ramen',
-      price: '$$$',
-    },
-    {
-      name: 'Hot Tacos Truck',
-      address: 'Campus Center',
-      image: '/images/hottacos.jpg',
-      description: 'Taco taco taco',
-      tags: ['American', 'Donuts', 'Coffee', 'Breakfast'],
-      price: '$$',
-    }
-  ]
-
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
@@ -47,7 +20,10 @@ class ListRestaurants extends React.Component {
         <Container>
           <Header as="h2" textAlign="center">Restaurants List</Header>
           <Card.Group centered>
-            {this.restaurants.map((restaurant, index) => <Restaurant restaurant={restaurant} key={index}/>)}
+            {this.props.restaurants.map((restaurant, index) => <Restaurant
+                restaurant={restaurant}
+                key={index}
+            />)}
           </Card.Group>
         </Container>
     );

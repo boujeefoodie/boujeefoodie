@@ -19,3 +19,4 @@ Restaurants.attachSchema(RestaurantSchema);
 
 /** Make the collection and schema available to other code. */
 export { Restaurants, RestaurantSchema };
+

@@ -55,7 +55,6 @@ class AddStuff extends React.Component {
                 <TextField name='price'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
-                <HiddenField name='owner' value='fakeuser@foo.com'/>
               </Segment>
             </AutoForm>
           </Grid.Column>

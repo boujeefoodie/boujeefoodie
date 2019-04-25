@@ -15,9 +15,6 @@
       "name": "Sistah`s Food Truck",
       "address": "POST",
       "image": "/images/sistahtruck.jpg",
-      "description": "A food truck with chicken katsu",
-      "tags": "Asian, Korean, Lunch",
-      "price": "$"
       "description": "Sistah's Food Truck is a highly-reviewed fast-food restaurant. The customers' favorite would definitely be their chicken katsu and unique special sauce. Whenever you pass by the truck, lines of people are waiting and menu items are sold out.",
       "tags": "Asian, Korean, Lunch",
       "price": "$"
@@ -26,9 +23,6 @@
       "name": "Kamitoku Ramen Truck",
       "address": "POST",
       "image": "/images/kamitoku.jpg",
-      "description": "Ramen and beef bowls ",
-      "tags": "Asian, Japanese, Ramen",
-      "price": "$$$"
       "description": "Kamitoku provides the cheap goods to your Japanese cuisine cravings, serving food items such as ramen and beef bowls.",
       "tags": "Asian, Japanese, Ramen",
       "price": "$$$"

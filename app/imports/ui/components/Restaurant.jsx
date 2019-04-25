@@ -1,8 +1,9 @@
 import React from 'react';
-import { Card, Image, Label } from 'semantic-ui-react';
+import { Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
-import { Restaurants } from '/imports/api/restaurant/restaurant'
+import { withRouter, Link } from 'react-router-dom';
+import { Restaurants } from '/imports/api/restaurant/restaurant';
+import { Roles } from 'meteor/alanning:roles';
 
 /** Renders a single row in the List Stuff (Admin) table. See pages/ListStuffAdmin.jsx. */
 class Restaurant extends React.Component {
@@ -14,7 +15,7 @@ class Restaurant extends React.Component {
   onClick() {
     const result = window.confirm('Do you really want to delete?');
     if (result) {
-      Restaurant.remove(this.props.vendor._id, this.deleteCallback);
+      Restaurants.remove(this.props.vendor._id, this.deleteCallback);
     }
     return false;
   }
@@ -40,6 +41,11 @@ class Restaurant extends React.Component {
           <Card.Content extra>
             {this.props.restaurant.tags}
           </Card.Content>
+          {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+              <Card.Content extra>
+                <Link to={`/edit/${this.props.restaurant._id}`}>Edit</Link>
+              </Card.Content>
+          ) : ''}
         </Card>
     );
   }

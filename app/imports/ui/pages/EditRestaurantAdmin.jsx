@@ -18,8 +18,8 @@ import { withTracker } from 'meteor/react-meteor-data';
 class EditRestaurantAdmin extends React.Component {
 
   submit(data) {
-    const { name, address, image, description, tags, price } = data;
-    Restaurants.update(_id, { $set: { name, address, image, description, tags, price } }, (error) => (error ?
+    const { name, address, image, description, price, _id } = data;
+    Restaurants.update(_id, { $set: { name, address, image, description, price } }, (error) => (error ?
         Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
         Bert.alert({ type: 'success', message: 'Update succeeded' })));
   }

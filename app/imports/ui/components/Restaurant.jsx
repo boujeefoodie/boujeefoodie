@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image } from 'semantic-ui-react';
+import { Card, Image, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 import { Restaurants } from '/imports/api/restaurant/restaurant';
@@ -40,6 +40,11 @@ class Restaurant extends React.Component {
           <Card.Content extra>{this.props.restaurant.price}</Card.Content>
           <Card.Content extra>
             {this.props.restaurant.tags}
+          </Card.Content>
+          <Card.Content extra>
+           <Link to={`/restaurantpage/${this.props.restaurant._id}`}>
+              <Button color={'red'}> View Restaurant</Button>
+            </Link>
           </Card.Content>
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
               <Card.Content extra>

@@ -16,6 +16,7 @@ import Kamitoku from '../pages/Kamitoku';
 import Description from '../components/Description';
 import AddRestaurantAdmin from '../pages/AddRestaurantAdmin';
 import RestaurantPage from '../pages/RestaurantPage';
+import EditRestaurantAdmin from '../pages/EditRestaurantAdmin';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -27,10 +28,11 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
-              <Route path="/restaurantpage" component={RestaurantPage}/>
+              <Route path="/restaurantpage/:_id" component={RestaurantPage}/>
               <ProtectedRoute path="/list" component={ListRestaurants}/>
                 <ProtectedRoute path="/kamitoku" component={Kamitoku}/>
               <AdminProtectedRoute path="/add" component={AddRestaurantAdmin}/>
+              <AdminProtectedRoute path="/edit/:_id" component={EditRestaurantAdmin}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>

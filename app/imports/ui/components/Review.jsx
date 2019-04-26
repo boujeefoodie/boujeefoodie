@@ -41,13 +41,6 @@ class Review extends React.Component {
     render() {
         return (
         <Button color='red'>Write a Review</Button>
-            <Modal
-        trigger={<Button onClick={this.handleOpen}>Show Modal</Button>}
-        open={this.state.modalOpen}
-        onClose={this.handleClose}
-    >
-
-
     );
   }
 }

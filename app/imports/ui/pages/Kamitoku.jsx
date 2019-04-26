@@ -31,7 +31,7 @@ class Kamitoku extends React.Component {
                         <Image rounded size="large"
                                src='/images/kamitoku.jpg'/>
                     </Grid.Column>
-                    <Grid.Column centered textAlign="right">
+                    <Grid.Column centered textAlign="right" style={{ paddingTop: '100px' }}>
                         <List>
                             <List.Item><Header>Location</Header></List.Item>
                             <List.Item>M W F - Center for Korean Studies</List.Item>

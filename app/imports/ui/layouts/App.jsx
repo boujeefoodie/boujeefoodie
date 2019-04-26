@@ -15,7 +15,6 @@ import Signout from '../pages/Signout';
 import Kamitoku from '../pages/Kamitoku';
 import Description from '../components/Description';
 import AddRestaurantAdmin from '../pages/AddRestaurantAdmin';
-import RestaurantPage from '../pages/RestaurantPage';
 import EditRestaurantAdmin from '../pages/EditRestaurantAdmin';
 import RestaurantPage from '../pages/RestaurantPage';
 

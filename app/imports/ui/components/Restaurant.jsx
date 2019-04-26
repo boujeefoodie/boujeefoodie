@@ -17,7 +17,7 @@ class Restaurant extends React.Component {
   onClick() {
     const result = window.confirm('Do you really want to delete?');
     if (result) {
-      Restaurants.remove(this.props.vendor._id, this.deleteCallback);
+      Restaurants.remove(this.props.restaurant._id, this.deleteCallback);
     }
     return false;
   }
@@ -59,6 +59,9 @@ class Restaurant extends React.Component {
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
               <Card.Content extra>
                 <Link to={`/edit/${this.props.restaurant._id}`}>Edit</Link>
+                <Card.Content extra>
+                  <Button basic onClick={this.onClick}>Delete</Button>
+                </Card.Content>
               </Card.Content>
           ) : ''}
         </Card>

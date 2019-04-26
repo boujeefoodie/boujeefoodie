@@ -33,9 +33,8 @@ class Review extends React.Component {
 
     /** On submit, insert the data. */
     submit(data) {
-        const { email, review, rating, createdAt, owner } = data;
-        const owner = Meteor.user().username;
-        Stuffs.insert({ name, quantity, condition, owner }, this.insertCallback);
+        const { email, review, rating, createdAt } = data;
+        Stuffs.insert({ name, quantity, condition }, this.insertCallback);
     }
 
     render() {

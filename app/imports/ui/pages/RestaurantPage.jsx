@@ -24,17 +24,17 @@ class RestaurantPage extends React.Component {
             <Grid divided='vertically'>
                 <Grid.Row centered columns={3}>
                     <Grid.Column centered>
-                        <Header as="h2">{this.props.restaurant.name}</Header>
+                        <Header as="h2">{this.props.doc.name}</Header>
                         <List>
                         <i className="dollar sign icon"></i>
                         </List>
                         <Image rounded size="large"
-                               src={this.props.restaurant.image}/>
+                               src={this.props.doc.image}/>
                     </Grid.Column>
                     <Grid.Column centered textAlign="right" style={{ paddingTop: '100px' }}>
                         <List>
                             <List.Item><Header>Location</Header></List.Item>
-                            <List.Item>{this.props.restaurant.address}</List.Item>
+                            <List.Item>{this.props.doc.address}</List.Item>
                         </List>
                         <List>
                             <List.Item><Header>Operating Hours</Header></List.Item>
@@ -42,7 +42,7 @@ class RestaurantPage extends React.Component {
                             <List.Item>10:00 am - 2:00 pm</List.Item>
                         </List>
                         <Header>Description</Header>
-                        <p>{this.props.restaurant.description}</p>
+                        <p>{this.props.doc.description}</p>
                 </Grid.Column>
                 </Grid.Row>
                 <Grid.Row>
@@ -74,18 +74,19 @@ class RestaurantPage extends React.Component {
 /** Require a document to be passed to this component. */
 /** Require an array of Stuff documents in the props. */
 RestaurantPage.propTypes = {
-    restaurant: PropTypes.object,
-    ready: PropTypes.bool.isRequired,
+  doc: PropTypes.object,
+  model: PropTypes.object,
+  ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(({ match }) => {
-    // Get access to Stuff documents.
-    const restaurantId = match.params._id;
-    const subscription = Meteor.subscribe('Restaurant');
-
-    return {
-        restaurants: Restaurants.findOne(restaurantId),
-        ready: subscription.ready(),
+  // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
+  const documentId = match.params._id;
+  // Get access to Contacts documents.
+  const subscription = Meteor.subscribe('Restaurant');
+  return {
+    doc: Restaurants.findOne(documentId),
+    ready: subscription.ready()
     };
 })(RestaurantPage);

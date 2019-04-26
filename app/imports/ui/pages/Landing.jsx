@@ -1,5 +1,4 @@
 import React from 'react';
-import { GoogleMap, Marker } from "react-google-maps";
 import { Grid, Search, Card, Header, Container, Image } from 'semantic-ui-react';
 import MiddleMenu from '../components/MiddleMenu';
 import Description from '../components/Description';

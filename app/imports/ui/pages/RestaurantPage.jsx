@@ -46,24 +46,24 @@ class RestaurantPage extends React.Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid verticalAlign='middle' columns={4} centered>
-              <Segment>
-                <Header as="h2" textAlign="center">
-                  Reviews
-                </Header>
-              </Segment>
-              <div >
-              </div>
-              <Grid.Column width={4}>
-                <Rating icon = 'star' maxRating={5} size="huge" onRate={this.handleRate} />
-              </Grid.Column>
-              <Grid.Column width={9}>
-                <div>Hello</div>
-              </Grid.Column>
-              <Grid.Column width={3}>
-                <Rating icon = 'star' maxRating={5} size="huge" onRate={this.handleRate} />
-              </Grid.Column>
-            </Grid>
+            {/*<Grid verticalAlign='middle' columns={4} centered>*/}
+            {/*  <Segment>*/}
+            {/*    <Header as="h2" textAlign="center">*/}
+            {/*      Reviews*/}
+            {/*    </Header>*/}
+            {/*  </Segment>*/}
+            {/*  <div >*/}
+            {/*  </div>*/}
+            {/*  <Grid.Column width={4}>*/}
+            {/*    <Rating icon = 'star' maxRating={5} size="huge" onRate={this.handleRate} />*/}
+            {/*  </Grid.Column>*/}
+            {/*  <Grid.Column width={9}>*/}
+            {/*    <div>Hello</div>*/}
+            {/*  </Grid.Column>*/}
+            {/*  <Grid.Column width={3}>*/}
+            {/*    <Rating icon = 'star' maxRating={5} size="huge" onRate={this.handleRate} />*/}
+            {/*  </Grid.Column>*/}
+            {/*</Grid>*/}
           </Grid.Row>
         </Grid>
 

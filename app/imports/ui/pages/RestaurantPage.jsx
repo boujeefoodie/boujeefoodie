@@ -26,7 +26,7 @@ class RestaurantPage extends React.Component {
             <Grid.Column centered>
               <Header as="h2">{this.props.doc.name}</Header>
               <List>
-                <i className="dollar sign icon"></i>
+                <Header as="h3">{this.props.doc.price}</Header>
               </List>
               <Image rounded size="large"
                      src={this.props.doc.image}/>
@@ -63,7 +63,7 @@ class RestaurantPage extends React.Component {
             {/*  <Grid.Column width={3}>*/}
             {/*    <Rating icon = 'star' maxRating={5} size="huge" onRate={this.handleRate} />*/}
             {/*  </Grid.Column>*/}
-            {/*</Grid>*/}
+            {/*</Grid>*/} f
           </Grid.Row>
         </Grid>
 

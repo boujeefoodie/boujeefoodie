@@ -1,6 +1,6 @@
 import React from 'react';
-import { Restaurants , RestaurantSchema } from '/imports/api/restaurant/restaurant';
-import { Grid, Segment, Header } from 'semantic-ui-react';
+import { Restaurants, RestaurantSchema } from '/imports/api/restaurant/restaurant';
+import { Grid, Segment, Header, Container } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
 import NumField from 'uniforms-semantic/NumField';
@@ -42,23 +42,28 @@ class AddStuff extends React.Component {
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
+    const divStyle = { paddingBottom: '25px' };
     return (
-        <Grid container centered>
-          <Grid.Column>
-            <Header as="h2" textAlign="center">Add Restaurant</Header>
-            <AutoForm ref={(ref) => { this.formRef = ref; }} schema={RestaurantSchema} onSubmit={this.submit}>
-              <Segment>
-                <TextField name='name'/>
-                <TextField name='address'/>
-                <TextField name='image'/>
-                <LongTextField name='description'/>
-                <TextField name='price'/>
-                <SubmitField value='Submit'/>
-                <ErrorsField/>
-              </Segment>
-            </AutoForm>
-          </Grid.Column>
-        </Grid>
+        <Container style={divStyle}>
+          <Grid container centered>
+            <Grid.Column>
+              <Header as="h2" textAlign="center">Add Restaurant</Header>
+              <AutoForm ref={(ref) => {
+                this.formRef = ref;
+              }} schema={RestaurantSchema} onSubmit={this.submit}>
+                <Segment>
+                  <TextField name='name'/>
+                  <TextField name='address'/>
+                  <TextField name='image'/>
+                  <LongTextField name='description'/>
+                  <TextField name='price'/>
+                  <SubmitField value='Submit'/>
+                  <ErrorsField/>
+                </Segment>
+              </AutoForm>
+            </Grid.Column>
+          </Grid>
+        </Container>
     );
   }
 }

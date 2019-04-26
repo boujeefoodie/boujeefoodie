@@ -43,11 +43,19 @@ class Restaurant extends React.Component {
           <Card.Content extra>
             {this.props.restaurant.tags}
           </Card.Content>
+<<<<<<< HEAD
             <Card.Content extra>
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? (<Link to={`/restaurantpage/${this.props.restaurant._id}`}>
                 <Button color={'red'}> View Restaurant</Button>
                 </Link>) : ''}
             </Card.Content>
+=======
+          <Card.Content extra>
+           <Link to={`/restaurantpage/${this.props.restaurant._id}`}>
+              <Button color={'red'}> View Restaurant</Button>
+            </Link>
+          </Card.Content>
+>>>>>>> 96e0a7bab49c177d8db56ab418e6f2b1842dc431
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
               <Card.Content extra>
                 <Link to={`/edit/${this.props.restaurant._id}`}>Edit</Link>

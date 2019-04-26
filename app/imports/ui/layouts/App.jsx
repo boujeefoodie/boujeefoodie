@@ -17,6 +17,7 @@ import Description from '../components/Description';
 import AddRestaurantAdmin from '../pages/AddRestaurantAdmin';
 import RestaurantPage from '../pages/RestaurantPage';
 import EditRestaurantAdmin from '../pages/EditRestaurantAdmin';
+import RestaurantPage from '../pages/RestaurantPage';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {

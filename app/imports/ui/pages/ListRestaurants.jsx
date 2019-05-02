@@ -16,7 +16,7 @@ class ListRestaurants extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
-    const divStyle = { paddingBottom: '25px' };
+    const divStyle = { paddingBottom: '85px' };
     return (
         <Container style={divStyle}>
           <Header as="h2" textAlign="center">Restaurants List</Header>

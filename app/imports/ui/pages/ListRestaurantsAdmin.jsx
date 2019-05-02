@@ -16,8 +16,9 @@ class ListRestaurantsAdmin extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
+    const divStyle = { paddingBottom: '85px' };
     return (
-        <Container>
+        <Container style={divStyle}>
           <Header as="h2" textAlign="center">List Stuff (Admin)</Header>
           <Table celled>
             <Table.Header>
@@ -29,7 +30,7 @@ class ListRestaurantsAdmin extends React.Component {
               </Table.Row>
             </Table.Header>
             <Table.Body>
-              {this.props.stuffs.map((stuff) => <StuffItemAdmin key={stuff._id} stuff={stuff} />)}
+              {this.props.stuffs.map((stuff) => <StuffItemAdmin key={stuff._id} stuff={stuff}/>)}
             </Table.Body>
           </Table>
         </Container>

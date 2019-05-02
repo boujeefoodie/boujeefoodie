@@ -43,3 +43,9 @@
   margin-top: 100px;
 }
 
+.sticky-footer{
+  position:fixed;
+  left:0;
+  bottom:0;
+  right:0;
+}

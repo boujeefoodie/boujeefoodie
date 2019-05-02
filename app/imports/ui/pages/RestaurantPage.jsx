@@ -1,18 +1,16 @@
 import React from 'react';
-import { Grid, Header, Rating, Image, Segment, List, Loader } from 'semantic-ui-react';
+import { Grid, Header, Rating, Image, Segment, List, Loader, Button } from "semantic-ui-react";
 import { Restaurants } from '/imports/api/restaurant/restaurant';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
+import AddReview from "../components/AddReview";
+import Review from '/imports/ui/components/Review';
+import { Reviews } from '../../api/reviews/review';
 
 
 /** A simple static component to render some text for the landing page. */
 class RestaurantPage extends React.Component {
-
-  state = {}
-
-  handleRate = (e, { rating, maxRating }) => this.setState({ rating, maxRating })
-
 
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
@@ -52,16 +50,23 @@ class RestaurantPage extends React.Component {
                   Reviews
                 </Header>
               </Segment>
+                <Grid.Column width={9}>
+                    <Button color='red'>Write a Review</Button>
+                </Grid.Column>
               <div >
               </div>
               <Grid.Column width={4}>
-                <Rating icon = 'star' maxRating={5} size="huge" onRate={this.handleRate} />
+                  <List.Item>
+                      <List.Content>
+                      </List.Content>
+                  </List.Item>
               </Grid.Column>
               <Grid.Column width={9}>
-                <div>Hello</div>
+                  <Button color='red'>Write a Review</Button>
+                  <AddReview restaurant={this.props.doc.name}/>
               </Grid.Column>
               <Grid.Column width={3}>
-                <Rating icon = 'star' maxRating={5} size="huge" onRate={this.handleRate} />
+                  {this.props.reviews.map((review, index) => <Review key={index} review={review}/>)}
               </Grid.Column>
             </Grid>
           </Grid.Row>
@@ -72,8 +77,7 @@ class RestaurantPage extends React.Component {
 
 /** Require a document to be passed to this component. */
 /** Require an array of Stuff documents in the props. */
-RestaurantPage.propTypes = {
-
+RestaurantPage.propTypes = { reviews: PropTypes.array.isRequired,
   doc: PropTypes.object,
   model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
@@ -82,11 +86,15 @@ RestaurantPage.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(({ match }) => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
+
   const documentId = match.params._id;
   // Get access to Contacts documents.
   const subscription = Meteor.subscribe('Restaurant');
+   const subscription2 = Meteor.subscribe('Reviews');
+// && subscription2.ready())
   return {
+      reviews: Reviews.find({}).fetch(),
     doc: Restaurants.findOne(documentId),
-    ready: subscription.ready()
+      ready: subscription.ready() && subscription2.ready(),
   };
 })(RestaurantPage);

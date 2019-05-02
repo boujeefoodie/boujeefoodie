@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid, Input, Icon, Container } from 'semantic-ui-react';
 import { Bert } from 'meteor/themeteorchef:bert';
-import { Menu } from 'semantic-ui-react/dist/commonjs/collections/Menu';
 
 /** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
 class Footer extends React.Component {

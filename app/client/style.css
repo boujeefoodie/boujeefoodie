@@ -1,5 +1,5 @@
 .landing-background {
-  background: url("/images/manoa-background.jpg") no-repeat center center;
+  background: url("../public/images/manoa-background.jpg") no-repeat center center;
   background-size: cover;
   height: 1350px;
 }

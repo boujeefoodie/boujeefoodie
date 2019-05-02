@@ -35,8 +35,8 @@ class SearchBar extends React.Component {
     const { isLoading, value, results } = this.state;
     return (
             <Search
-                size= 'big'
-                placeholder = 'search restaurants...'
+                size= 'huge'
+                placeholder = 'Search Restaurants...'
                 loading={isLoading}
                 onResultSelect={this.handleResultSelect}
                 onSearchChange={_.debounce(this.handleSearchChange, 500, { leading: true })}

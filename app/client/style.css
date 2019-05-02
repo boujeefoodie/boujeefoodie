@@ -1,5 +1,5 @@
 .landing-background {
-  background: url("../public/images/manoa-background.jpg") no-repeat center center;
+  background: url('/images/manoa-background.jpg') no-repeat center center;
   background-size: cover;
   height: 1350px;
 }
@@ -44,5 +44,5 @@
 }
 
 div.ui.search > div.results{
-  left: 35%;
+  left: 33.75%;
 }

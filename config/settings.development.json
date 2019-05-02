@@ -10,6 +10,29 @@
       "password": "changeme"
     }
   ],
+  "defaultReviews": [
+    {
+      "restaurantName":"Kamitoku Ramen Truck",
+      "user": "john@foo.com",
+      "review": "Stay Cherreh",
+      "rating": "5",
+      "createdAt": "Wed May 01 2019 20:14:56 GMT-1000 (Hawaii-Aleutian Standard Time)"
+    },
+    {
+      "restaurantName":"Sistah`s Food Truck",
+      "user": "john@foo.com",
+      "review": "Stay Cherreh",
+      "rating": "5",
+      "createdAt": "Wed May 01 2019 20:14:56 GMT-1000 (Hawaii-Aleutian Standard Time)"
+    },
+    {
+      "restaurantName":"Hot Tacos Truck",
+      "user": "john@foo.com",
+      "review": "Stay Cherreh",
+      "rating": "5",
+      "createdAt": "Wed May 01 2019 20:14:56 GMT-1000 (Hawaii-Aleutian Standard Time)"
+    }
+  ],
   "defaultData": [
     {
       "name": "Sistah`s Food Truck",

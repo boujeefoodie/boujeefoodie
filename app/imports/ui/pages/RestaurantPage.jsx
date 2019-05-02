@@ -4,7 +4,7 @@ import { Restaurants } from '/imports/api/restaurant/restaurant';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
-import AddReview from "../components/AddReview";
+import AddReview from '../components/AddReview';
 import Review from '/imports/ui/components/Review';
 import { Reviews } from '../../api/reviews/review';
 
@@ -51,7 +51,7 @@ class RestaurantPage extends React.Component {
                 </Header>
               </Segment>
                 <Grid.Column width={9}>
-                    <Button color='red'>Write a Review</Button>
+                    <AddReview restaurant={this.props.doc}/>
                 </Grid.Column>
               <div >
               </div>
@@ -62,8 +62,6 @@ class RestaurantPage extends React.Component {
                   </List.Item>
               </Grid.Column>
               <Grid.Column width={9}>
-                  <Button color='red'>Write a Review</Button>
-                  <AddReview restaurant={this.props.doc.name}/>
               </Grid.Column>
               <Grid.Column width={3}>
                   {this.props.reviews.map((review, index) => <Review key={index} review={review}/>)}
@@ -77,10 +75,11 @@ class RestaurantPage extends React.Component {
 
 /** Require a document to be passed to this component. */
 /** Require an array of Stuff documents in the props. */
-RestaurantPage.propTypes = { reviews: PropTypes.array.isRequired,
+RestaurantPage.propTypes = {
   doc: PropTypes.object,
   model: PropTypes.object,
-  ready: PropTypes.bool.isRequired,
+    reviews: PropTypes.array.isRequired,
+    ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
@@ -91,9 +90,10 @@ export default withTracker(({ match }) => {
   // Get access to Contacts documents.
   const subscription = Meteor.subscribe('Restaurant');
    const subscription2 = Meteor.subscribe('Reviews');
-// && subscription2.ready())
+
   return {
-      reviews: Reviews.find({}).fetch(),
+      reviews: Reviews.find({ restaurantName: (Restaurants.findOne(documentId) !== undefined) ?
+              (Restaurants.findOne(documentId).name) : ('') }).fetch(),
     doc: Restaurants.findOne(documentId),
       ready: subscription.ready() && subscription2.ready(),
   };

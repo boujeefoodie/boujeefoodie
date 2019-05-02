@@ -1,7 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
-import { Reviews } from '../../api/reviews/review.js';
-import { Restaurants } from "../../api/restaurant/restaurant";
+import { Reviews } from '../../api/reviews/review';
 
 /* eslint-disable no-console */
    /** This subscription publishes only the documents associated with the logged in user */
@@ -24,12 +23,6 @@ Meteor.publish('Reviews', function publish() {
     if (this.userId) {
         const username = Meteor.users.findOne(this.userId).username;
         return Reviews.find();
-    }
-    return this.ready();
-});
-Meteor.publish('RestaurantAdmin', function publish() {
-    if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-        return Restaurants.find();
     }
     return this.ready();
 });

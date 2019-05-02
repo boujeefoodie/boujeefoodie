@@ -8,7 +8,7 @@ import ErrorsField from 'uniforms-semantic/ErrorsField';
 import PropTypes from 'prop-types';
 import { Bert } from 'meteor/themeteorchef:bert';
 import { Meteor } from 'meteor/meteor';
-import { Reviews, ReviewSchema } from '../../api/reviews/reviews';
+import { Reviews, ReviewSchema } from '../../api/reviews/review';
 
 class AddReview extends React.Component {
 
@@ -47,18 +47,19 @@ class AddReview extends React.Component {
         return (
             <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ ReviewSchema } onSubmit={this.submit}>
             <Segment>
-                <TextField name='review'/>
+                <h1>Add a Review</h1>
                 <Rating icon='star'
                         defaultRating={1}
                         maxRating={5}
                         name='rating'
                         onRate={this.ChangeRating}
                 />
+                <TextField name='review'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
                 <HiddenField name='createdAt' value={ Date().toLocaleString() }/>
                 <HiddenField name='restaurantName' value={this.props.restaurant.name}/>
-                <HiddenField name='owner' value={this.user}/>
+                <HiddenField name='user' value={Meteor.user().username}/>
             </Segment>
             </AutoForm>
     );

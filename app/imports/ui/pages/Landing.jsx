@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Image, Card } from 'semantic-ui-react';
-import SearchBar from '/imports/ui/components/SearchBar';
+import SearchBarCustom from '/imports/ui/components/SearchBarCustom';
 import PropTypes from 'prop-types';
 
 /** A simple static component to render some text for the landing page. */
@@ -10,7 +10,7 @@ class Landing extends React.Component {
     return (
         <div className='landing-background'>
           <Grid container stackable centered columns={1}>
-            <Grid.Column textAlign={'center'}>
+            <Grid.Column textAlign={'center'} >
               <Grid.Row className="title-main">
                 <p className="main-text">
                   Boujee Foodie
@@ -20,14 +20,14 @@ class Landing extends React.Component {
                   available to you! Check reviews of other Foodies and add your own!
                 </p>
               </Grid.Row>
-              <Grid.Row>
-                <SearchBar/>
+              <Grid.Row columns={1}>
+                <SearchBarCustom/>
               </Grid.Row>
             </Grid.Column>
           </Grid>
           <Grid container stackable centered columns={3}>
             <Grid.Column textAlign={'center'}>
-              <Card>
+              <Card centered>
                 <Card.Content>
                   <Card.Header>Sistah Food Truck</Card.Header>
                   <Image size='medium' src='/images/sistahtruck.jpg'/>
@@ -39,7 +39,7 @@ class Landing extends React.Component {
               </Card>
             </Grid.Column>
             <Grid.Column textAlign={'center'}>
-              <Card>
+              <Card centered>
                 <Card.Content>
                   <Card.Header>Kamitoku</Card.Header>
                   <Image size='medium'
@@ -52,7 +52,7 @@ class Landing extends React.Component {
               </Card>
             </Grid.Column>
             <Grid.Column textAlign={'center'}>
-              <Card>
+              <Card centered>
                 <Card.Content>
                   <Card.Header>Hot Tacos</Card.Header>
                   <Image style={{ width: '100%', height: '265px' }} size='medium'

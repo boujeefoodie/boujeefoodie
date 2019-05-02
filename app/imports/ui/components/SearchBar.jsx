@@ -34,9 +34,9 @@ class SearchBar extends React.Component {
   render() {
     const { isLoading, value, results } = this.state;
     return (
-        <Grid>
-          <Grid.Column width={8}>
             <Search
+                size= 'small'
+                placeholder = 'search restaurants...'
                 loading={isLoading}
                 onResultSelect={this.handleResultSelect}
                 onSearchChange={_.debounce(this.handleSearchChange, 500, { leading: true })}
@@ -44,8 +44,6 @@ class SearchBar extends React.Component {
                 value={value}
                 {...this.props}
             />
-          </Grid.Column>
-        </Grid>
     );
   }
 }

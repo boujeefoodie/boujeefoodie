@@ -1,6 +1,7 @@
 import React from 'react';
-import { Grid, Image, Search, Card } from 'semantic-ui-react';
-import { SearchBar } from '/imports/ui/components/searchbar';
+import { Grid, Image, Card } from 'semantic-ui-react';
+import SearchBar from '/imports/ui/components/SearchBar';
+import PropTypes from 'prop-types';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -29,8 +30,7 @@ class Landing extends React.Component {
               <Card>
                 <Card.Content>
                   <Card.Header>Sistah Food Truck</Card.Header>
-                  <Image size='medium'
-                         src='/images/sistahtruck.jpg'/>
+                  <Image size='medium' src='/images/sistahtruck.jpg'/>
                   <Card.Description>
                     The Sistah Food Truck offer great tasting korean fusion fusion food at a
                     great price!<strong> -Kevin Liu</strong>

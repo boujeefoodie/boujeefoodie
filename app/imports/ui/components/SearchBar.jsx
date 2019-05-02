@@ -1,13 +1,14 @@
 import _ from 'lodash';
 import React from 'react';
-import { Search, Grid, Header } from 'semantic-ui-react'
+import { Search, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Restaurants , RestaurantSchema } from '/imports/api/restaurant/restaurant';
+import { Restaurants } from '/imports/api/restaurant/restaurant';
+import { Meteor } from 'meteor/meteor';
 
 class SearchBar extends React.Component {
   componentWillMount() {
-    this.resetComponent()
+    this.resetComponent();
   }
 
   resetComponent = () => this.setState({ isLoading: false, results: [], value: '' });
@@ -26,8 +27,8 @@ class SearchBar extends React.Component {
       this.setState({
         isLoading: false,
         results: _.filter(this.props.restaurants, isMatch),
-      })
-    }, 300)
+      });
+    }, 300);
   }
 
   render() {
@@ -45,7 +46,7 @@ class SearchBar extends React.Component {
             />
           </Grid.Column>
         </Grid>
-    )
+    );
   }
 }
 

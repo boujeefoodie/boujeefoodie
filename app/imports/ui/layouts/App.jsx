@@ -12,8 +12,6 @@ import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
-import Kamitoku from '../pages/Kamitoku';
-import Description from '../components/Description';
 import AddRestaurantAdmin from '../pages/AddRestaurantAdmin';
 import EditRestaurantAdmin from '../pages/EditRestaurantAdmin';
 import RestaurantPage from '../pages/RestaurantPage';
@@ -30,7 +28,6 @@ class App extends React.Component {
               <Route path="/signup" component={Signup}/>
               <Route path="/restaurantpage/:_id" component={RestaurantPage}/>
               <ProtectedRoute path="/list" component={ListRestaurants}/>
-                <ProtectedRoute path="/kamitoku" component={Kamitoku}/>
               <AdminProtectedRoute path="/add" component={AddRestaurantAdmin}/>
               <AdminProtectedRoute path="/edit/:_id" component={EditRestaurantAdmin}/>
               <ProtectedRoute path="/signout" component={Signout}/>

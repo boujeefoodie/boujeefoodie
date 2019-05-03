@@ -14,7 +14,6 @@ class Kamitoku extends React.Component {
                 <Grid.Row centered columns={3}>
                     <Grid.Column centered>
                         <Header as="h2">Kamitoku Ramen Truck</Header>
-                        {/* <Rating icon = 'star' maxRating={5} size="huge" onRate={this.handleRate} /> */}
                         <List>
                             <i className="dollar sign icon"></i>
                             <i className="dollar sign icon"></i>

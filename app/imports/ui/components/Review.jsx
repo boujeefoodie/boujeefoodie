@@ -1,33 +1,42 @@
-import React from 'react';
-import { Feed, Grid } from 'semantic-ui-react';
-import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import React from "react";
+import { Grid, Rating, List, Container } from "semantic-ui-react";
+import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
 
 
 class Review extends React.Component {
     render() {
-        const feedstyle = { margin: '20px' };
         return (
-            <Grid verticalAlign='middle' columns={4} centered>
-            <Feed.Event style={feedstyle}>
-                <Grid.Column width={9}>
-                    {this.props.review.user}
-                    <br/>
-                    {this.props.review.review}
-                    {this.props.review.rating}
-                </Grid.Column>
-                <Grid.Column width={3}>
-                    {this.props.review.createdAt.toLocaleDateString('en-US')}
-                </Grid.Column>
-            </Feed.Event>
-            </Grid>
+            <div style={{ paddingTop: 20 }, {paddingBottom: 20}} >
+                <Container>
+                    <Grid verticalAlign='middle' divided='vertically'>
+                        <Grid.Row>
+                            <Grid.Column width={3}>
+                                <List.Content>
+                                    <List.Header>{this.props.review.user}</List.Header>
+                                    <List.Item><Rating icon='star' maxRating={5}
+                                                       defaultRating={this.props.review.rating}
+                                                       size="huge"/></List.Item>
+                                </List.Content>
+                            </Grid.Column>
+                            <Grid.Column width={10}>
+                                {this.props.review.review}
+                            </Grid.Column>
+                            <Grid.Column width={3} textAlign='right'>
+                                {this.props.review.createdAt.toLocaleDateString("en-US")}
+                            </Grid.Column>
+                        </Grid.Row>
+                        <Grid.Row/>
+                    </Grid>
+                </Container>
+            </div>
         );
     }
 }
 
 /** Require a document to be passed to this component. */
 Review.propTypes = {
-    review: PropTypes.object.isRequired,
+    review: PropTypes.object.isRequired
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */

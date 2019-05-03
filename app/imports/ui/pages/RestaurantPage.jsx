@@ -12,7 +12,8 @@ import { Reviews } from '../../api/reviews/review';
 /** A simple static component to render some text for the landing page. */
 class RestaurantPage extends React.Component {
 
-  render() {
+
+    render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
 
@@ -55,12 +56,6 @@ class RestaurantPage extends React.Component {
                 </Grid.Column>
               <div >
               </div>
-              <Grid.Column width={4}>
-                  <List.Item>
-                      <List.Content>
-                      </List.Content>
-                  </List.Item>
-              </Grid.Column>
                 {this.props.reviews.map((review, index) => <Review key={index} review={review}/>)}
             </Grid>
           </Grid.Row>

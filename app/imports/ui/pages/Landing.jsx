@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 class Landing extends React.Component {
 
   render() {
+    const divStyle = { paddingBottom: '50px', paddingTop: '50px' };
     return (
         <div className='landing-background'>
           <Grid container stackable centered columns={1}>
@@ -25,7 +26,7 @@ class Landing extends React.Component {
               </Grid.Row>
             </Grid.Column>
           </Grid>
-          <Grid container stackable centered columns={3}>
+          <Grid container stackable centered columns={3} style={divStyle}>
             <Grid.Column textAlign={'center'}>
               <Card centered>
                 <Card.Content>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Image, Card } from 'semantic-ui-react';
-
+import SearchBarCustom from '/imports/ui/components/SearchBarCustom';
+import PropTypes from 'prop-types';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -9,7 +10,7 @@ class Landing extends React.Component {
     return (
         <div className='landing-background'>
           <Grid container stackable centered columns={1}>
-            <Grid.Column textAlign={'center'}>
+            <Grid.Column textAlign={'center'} >
               <Grid.Row className="title-main">
                 <p className="main-text">
                   Boujee Foodie
@@ -19,15 +20,17 @@ class Landing extends React.Component {
                   available to you! Check reviews of other Foodies and add your own!
                 </p>
               </Grid.Row>
+              <Grid.Row columns={1}>
+                <SearchBarCustom/>
+              </Grid.Row>
             </Grid.Column>
           </Grid>
           <Grid container stackable centered columns={3}>
             <Grid.Column textAlign={'center'}>
-              <Card>
+              <Card centered>
                 <Card.Content>
                   <Card.Header>Sistah Food Truck</Card.Header>
-                  <Image floated='center' size='medium'
-                         src='/images/sistahtruck.jpg'/>
+                  <Image size='medium' src='/images/sistahtruck.jpg'/>
                   <Card.Description>
                     The Sistah Food Truck offer great tasting korean fusion fusion food at a
                     great price!<strong> -Kevin Liu</strong>
@@ -36,10 +39,10 @@ class Landing extends React.Component {
               </Card>
             </Grid.Column>
             <Grid.Column textAlign={'center'}>
-              <Card>
+              <Card centered>
                 <Card.Content>
                   <Card.Header>Kamitoku</Card.Header>
-                  <Image floated='center' size='medium'
+                  <Image size='medium'
                          src='images/kamitoku.jpg'/>
                   <Card.Description>
                     This ramen truck is a great spot to get ramen here on campus to fulfill my
@@ -49,10 +52,10 @@ class Landing extends React.Component {
               </Card>
             </Grid.Column>
             <Grid.Column textAlign={'center'}>
-              <Card>
+              <Card centered>
                 <Card.Content>
                   <Card.Header>Hot Tacos</Card.Header>
-                  <Image style={{ width: '100%', height: '265px' }} floated='center' size='medium'
+                  <Image style={{ width: '100%', height: '265px' }} size='medium'
                          src='images/hottacos.jpg'/>
                   <Card.Description>
                     Great Tacos! Must get the green and red taco sauce! Its Great!

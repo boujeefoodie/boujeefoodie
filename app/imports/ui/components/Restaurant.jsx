@@ -1,9 +1,11 @@
 import React from 'react';
-import { Card, Image, Button } from 'semantic-ui-react';
+import { Card, Image, Button, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 import { Restaurants } from '/imports/api/restaurant/restaurant';
 import { Roles } from 'meteor/alanning:roles';
+import { Meteor } from 'meteor/meteor';
+
 
 /** Renders a single row in the List Stuff (Admin) table. See pages/ListStuffAdmin.jsx. */
 class Restaurant extends React.Component {
@@ -31,7 +33,7 @@ class Restaurant extends React.Component {
   render() {
     return (
         <Card>
-          <Image src={this.props.restaurant.image} />
+          <Image src={this.props.restaurant.image}/>
           <Card.Content>
             <Card.Header>{this.props.restaurant.name}</Card.Header>
             <Card.Meta>{this.props.restaurant.address}</Card.Meta>
@@ -41,17 +43,23 @@ class Restaurant extends React.Component {
           <Card.Content extra>
             {this.props.restaurant.tags}
           </Card.Content>
-          <Card.Content extra>
-           <Link to={`/restaurantpage/${this.props.restaurant._id}`}>
+          <Card.Content extra textAlign='center'>
+            <Link to={`/restaurantpage/${this.props.restaurant._id}`}>
               <Button color={'red'}> View Restaurant</Button>
             </Link>
           </Card.Content>
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
               <Card.Content extra>
-                <Link to={`/edit/${this.props.restaurant._id}`}>Edit</Link>
-                <Card.Content extra>
-                  <Button basic onClick={this.onClick}>Delete</Button>
-                </Card.Content>
+                <Grid columns={2}>
+                  <Grid.Column textAlign='left'>
+                    <Button basic>
+                      <Link to={`/edit/${this.props.restaurant._id}`}>Edit</Link>
+                    </Button>
+                  </Grid.Column>
+                  <Grid.Column textAlign='right'>
+                    <Button basic onClick={this.onClick}>Delete</Button>
+                  </Grid.Column>
+                </Grid>
               </Card.Content>
           ) : ''}
         </Card>

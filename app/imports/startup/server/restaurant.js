@@ -4,7 +4,7 @@ import { Restaurants } from '../../api/restaurant/restaurant.js';
 
 /** Initialize the database with a default data document. */
 function addData(data) {
-  console.log(`  Adding: ${data.name} (${data.owner})`);
+  console.log(`  Adding: ${data.name}`);
   Restaurants.insert(data);
 }
 
@@ -18,11 +18,11 @@ if (Restaurants.find().count() === 0) {
 
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Restaurant', function publish() {
-  if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
+ // if (this.userId) {
+ //   const username = Meteor.users.findOne(this.userId).username;
     return Restaurants.find();
-  }
-  return this.ready();
+ // }
+ // return this.ready();
 });
 
 /** This subscription publishes all documents regardless of user, but only if the logged in user is the Admin. */

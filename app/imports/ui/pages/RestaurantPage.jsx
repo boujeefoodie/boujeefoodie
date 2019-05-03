@@ -61,11 +61,7 @@ class RestaurantPage extends React.Component {
                       </List.Content>
                   </List.Item>
               </Grid.Column>
-              <Grid.Column width={9}>
-              </Grid.Column>
-              <Grid.Column width={3}>
-                  {this.props.reviews.map((review, index) => <Review key={index} review={review}/>)}
-              </Grid.Column>
+                {this.props.reviews.map((review, index) => <Review key={index} review={review}/>)}
             </Grid>
           </Grid.Row>
         </Grid>

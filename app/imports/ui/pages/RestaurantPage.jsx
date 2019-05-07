@@ -10,7 +10,7 @@ import { Reviews } from '../../api/reviews/review';
 
 /** A simple static component to render some text for the landing page. */
 class RestaurantPage extends React.Component {
-    render() {
+  render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
 
@@ -41,15 +41,15 @@ class RestaurantPage extends React.Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row centered>
-                <Header as="h2" textAlign="center">
-                  Reviews
-                </Header>
+            <Header as="h2" textAlign="center">
+              Reviews
+            </Header>
           </Grid.Row>
-          <Grid.Row centered style={{ paddingBottom: '60px' }} >
-                <Grid.Column width={9}>
-                    <AddReview restaurant={this.props.doc}/>
-                </Grid.Column>
-                {this.props.reviews.map((review, index) => <Review key={index} review={review}/>)}
+          <Grid.Row centered style={{ paddingBottom: '60px' }}>
+            <Grid.Column width={9}>
+              <AddReview restaurant={this.props.doc}/>
+            </Grid.Column>
+            {this.props.reviews.map((review, index) => <Review key={index} review={review}/>)}
           </Grid.Row>
         </Grid>
     );
@@ -61,8 +61,8 @@ class RestaurantPage extends React.Component {
 RestaurantPage.propTypes = {
   doc: PropTypes.object,
   model: PropTypes.object,
-    reviews: PropTypes.array.isRequired,
-    ready: PropTypes.bool.isRequired,
+  reviews: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
@@ -72,12 +72,14 @@ export default withTracker(({ match }) => {
   const documentId = match.params._id;
   // Get access to Contacts documents.
   const subscription = Meteor.subscribe('Restaurant');
-   const subscription2 = Meteor.subscribe('Reviews');
+  const subscription2 = Meteor.subscribe('Reviews');
 
   return {
-      reviews: Reviews.find({ restaurantName: (Restaurants.findOne(documentId) !== undefined) ?
-              (Restaurants.findOne(documentId).name) : ('') }).fetch(),
+    reviews: Reviews.find({
+      restaurantName: (Restaurants.findOne(documentId) !== undefined) ?
+          (Restaurants.findOne(documentId).name) : (''),
+    }).fetch(),
     doc: Restaurants.findOne(documentId),
-      ready: subscription.ready() && subscription2.ready(),
+    ready: subscription.ready() && subscription2.ready(),
   };
 })(RestaurantPage);

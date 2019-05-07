@@ -5,7 +5,7 @@ import { withRouter, Link } from 'react-router-dom';
 import { Restaurants } from '/imports/api/restaurant/restaurant';
 import { Roles } from 'meteor/alanning:roles';
 import { Meteor } from 'meteor/meteor';
-
+import { Bert } from 'meteor/themeteorchef:bert';
 
 /** Renders a single row in the List Stuff (Admin) table. See pages/ListStuffAdmin.jsx. */
 class Restaurant extends React.Component {
@@ -16,6 +16,7 @@ class Restaurant extends React.Component {
   }
 
   onClick() {
+    // eslint-disable-next-line
     const result = window.confirm('Do you really want to delete?');
     if (result) {
       Restaurants.remove(this.props.restaurant._id, this.deleteCallback);

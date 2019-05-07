@@ -1,10 +1,6 @@
 import React from 'react';
-import { GoogleMap, Marker } from "react-google-maps";
-import { Grid, Search, Card, Header, Container, Image } from 'semantic-ui-react';
-import MiddleMenu from '../components/MiddleMenu';
-import Description from '../components/Description';
+import { Grid, Card, Image } from 'semantic-ui-react';
 import SearchBarCustom from '/imports/ui/components/SearchBarCustom';
-import PropTypes from 'prop-types';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -14,7 +10,7 @@ class Landing extends React.Component {
     return (
         <div className='landing-background'>
           <Grid container stackable centered columns={1}>
-            <Grid.Column textAlign={'center'} >
+            <Grid.Column textAlign={'center'}>
               <Grid.Row className="title-main">
                 <p className="main-text">
                   Boujee Foodie

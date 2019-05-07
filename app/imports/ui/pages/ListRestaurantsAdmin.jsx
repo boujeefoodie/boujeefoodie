@@ -1,8 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Container, Table, Header, Loader } from 'semantic-ui-react';
-import { Stuffs } from '/imports/api/stuff/stuff';
-import StuffItemAdmin from '/imports/ui/components/StuffItemAdmin';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 
@@ -30,7 +28,6 @@ class ListRestaurantsAdmin extends React.Component {
               </Table.Row>
             </Table.Header>
             <Table.Body>
-              {this.props.stuffs.map((stuff) => <StuffItemAdmin key={stuff._id} stuff={stuff}/>)}
             </Table.Body>
           </Table>
         </Container>
@@ -49,7 +46,6 @@ export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe('RestaurantAdmin');
   return {
-    restaurants: Restaurants.find({}).fetch(),
     ready: subscription.ready(),
   };
 })(ListRestaurantsAdmin);

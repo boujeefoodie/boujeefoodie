@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import React from 'react';
-import { Search, Grid } from 'semantic-ui-react';
+import { Loader, Search } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Restaurants } from '/imports/api/restaurant/restaurant';
@@ -32,18 +32,22 @@ class SearchBar extends React.Component {
   }
 
   render() {
+    return (this.props.ready) ? this.renderSearch() : <Loader active>Getting data</Loader>;
+  }
+
+  renderSearch() {
     const { isLoading, value, results } = this.state;
     return (
-            <Search
-                size= 'huge'
-                placeholder = 'Search Restaurants...'
-                loading={isLoading}
-                onResultSelect={this.handleResultSelect}
-                onSearchChange={_.debounce(this.handleSearchChange, 500, { leading: true })}
-                results={results}
-                value={value}
-                {...this.props}
-            />
+        <Search
+            size='huge'
+            placeholder='Search Restaurants...'
+            loading={isLoading}
+            onResultSelect={this.handleResultSelect}
+            onSearchChange={_.debounce(this.handleSearchChange, 500, { leading: true })}
+            results={results}
+            value={value}
+            {...this.props}
+        />
     );
   }
 }

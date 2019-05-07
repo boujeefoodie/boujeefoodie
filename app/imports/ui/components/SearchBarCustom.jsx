@@ -4,9 +4,8 @@ import { Search } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 import SearchBar from './SearchBar';
 
-
 const resultRenderer = ({ name, image, _id }) => {
-  if (name)
+  if (name) {
     return (
         <Search.Result
             as={NavLink} activeClassName="" exact to={`/restaurantpage/${_id}`}
@@ -14,6 +13,7 @@ const resultRenderer = ({ name, image, _id }) => {
             image={image}
         />
     );
+  }
 };
 
 resultRenderer.propTypes = {

@@ -30,7 +30,9 @@ class AddReview extends React.Component {
     }
   }
 
-  handleRate = (e, { rating }) => { this.rating = rating; }
+  handleRate = (e, { rating }) => {
+    this.rating = rating;
+  }
 
   /** On submit, insert the data. */
   submit(data) {

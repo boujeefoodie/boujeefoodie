@@ -1,12 +1,12 @@
-import React from "react";
-import { Grid, Rating, List, Container } from "semantic-ui-react";
-import PropTypes from "prop-types";
-import { withRouter } from "react-router-dom";
+import React from 'react';
+import { Grid, Rating, List, Container } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
 class Review extends React.Component {
   render() {
     return (
-        <div style={{ paddingTop: 20 }, {paddingBottom: 20}}>
+        <div style={{ paddingTop: 20, paddingBottom: 20 }}>
           <Container>
             <Grid verticalAlign='middle' divided='vertically'>
               <Grid.Row>
@@ -25,7 +25,7 @@ class Review extends React.Component {
                   {this.props.review.review}
                 </Grid.Column>
                 <Grid.Column width={3} textAlign='right'>
-                  {this.props.review.createdAt.toLocaleDateString("en-US")}
+                  {this.props.review.createdAt.toLocaleDateString('en-US')}
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row/>
@@ -38,7 +38,7 @@ class Review extends React.Component {
 
 /** Require a document to be passed to this component. */
 Review.propTypes = {
-  review: PropTypes.object.isRequired
+  review: PropTypes.object.isRequired,
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */

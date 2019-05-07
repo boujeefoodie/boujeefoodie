@@ -25,8 +25,9 @@ class Footer extends React.Component {
               <Grid.Column>
                 <a href='https://www.facebook.com' style={{ color: 'white' }}><Icon size='big' name='facebook'/></a>
                 <a href='https://www.twitter.com' style={{ color: 'white' }}><Icon size='big' name='twitter' link/></a>
-                <a href='https://www.instagram.com' style={{ color: 'white' }}><Icon size='big'
-                                                                                     name='instagram' link/></a>
+                <a href='https://www.instagram.com' style={{ color: 'white' }}>
+                  <Icon size='big' name='instagram' link/>
+                </a>
               </Grid.Column>
               <Grid.Column>
                 <Input action={{ content: 'Join Newsletter', onClick: this.handleClick }}
@@ -34,7 +35,7 @@ class Footer extends React.Component {
               </Grid.Column>
             </Grid>
           </div>
-         </Container>
+        </Container>
     );
   }
 }

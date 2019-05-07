@@ -1,7 +1,7 @@
 import React from 'react';
-import { Grid, Card, Image, Button } from "semantic-ui-react";
+import { Grid, Card, Image, Button } from 'semantic-ui-react';
 import SearchBarCustom from '/imports/ui/components/SearchBarCustom';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -36,7 +36,7 @@ class Landing extends React.Component {
                     The Sistah Food Truck offer great tasting korean fusion fusion food at a
                     great price!<strong> -Kevin Liu</strong>
                       <Card.Content extra textAlign='center'>
-                      <Link to={`/restaurantpage/b22eQ5uCQheL36kF3`}>
+                      <Link to={'/restaurantpage/b22eQ5uCQheL36kF3'}>
                           <Button color={'red'}> View Restaurant</Button>
                       </Link>
                       </Card.Content>
@@ -54,7 +54,7 @@ class Landing extends React.Component {
                     This ramen truck is a great spot to get ramen here on campus to fulfill my
                     ramen needs <strong> -Jon Tu</strong>
                       <Card.Content extra textAlign='center'>
-                          <Link to={`/restaurantpage/qRiZmgQPEQWZ5R4jq`}>
+                          <Link to={'/restaurantpage/qRiZmgQPEQWZ5R4jq'}>
                               <Button color={'red'}> View Restaurant</Button>
                           </Link>
                       </Card.Content>
@@ -72,7 +72,7 @@ class Landing extends React.Component {
                     Great Tacos! Must get the green and red taco sauce! Its Great!
                     <strong> -Jet Butac</strong>
                       <Card.Content extra textAlign='center'>
-                          <Link to={`/restaurantpage/a63ic6AXRQdpqoook`}>
+                          <Link to={'/restaurantpage/a63ic6AXRQdpqoook'}>
                               <Button color={'red'}> View Restaurant</Button>
                           </Link>
                       </Card.Content>

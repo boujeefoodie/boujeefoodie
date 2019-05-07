@@ -37,7 +37,7 @@ class AddStuff extends React.Component {
 
     /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
     render() {
-        const divStyle = { paddingBottom: "25px" };
+        const divStyle = { paddingBottom: '25px' };
         return (
             <Container style={divStyle}>
                 <Grid container centered>

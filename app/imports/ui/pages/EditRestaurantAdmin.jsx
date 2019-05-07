@@ -55,7 +55,7 @@ class EditRestaurantAdmin extends React.Component {
 EditRestaurantAdmin.propTypes = {
     doc: PropTypes.object,
     model: PropTypes.object,
-    ready: PropTypes.bool.isRequired
+    ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
@@ -66,6 +66,6 @@ export default withTracker(({ match }) => {
     const subscription = Meteor.subscribe('Restaurant');
     return {
         doc: Restaurants.findOne(documentId),
-        ready: subscription.ready()
+        ready: subscription.ready(),
     };
 })(EditRestaurantAdmin);

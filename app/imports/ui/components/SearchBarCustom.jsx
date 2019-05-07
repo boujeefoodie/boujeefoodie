@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Search } from 'semantic-ui-react';

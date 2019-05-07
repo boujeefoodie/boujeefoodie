@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import React from 'react';
 import { Grid, Header, Image, List, Loader } from 'semantic-ui-react';
 import { Restaurants } from '/imports/api/restaurant/restaurant';

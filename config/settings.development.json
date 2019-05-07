@@ -88,7 +88,15 @@
       "image": "http://manoa.hawaii.edu/food/resources/images/mainTitles/daSpotTitle.png",
       "description": "Da Spot Health Foods & Juices offers diverse, healthy and affordable cuisine with a unique take on tasty dishes from around the world. Da Spot specializes in Mediterranean and North African food with vegan and specialty meat options that can be certified halal or kosher. Offering imaginative cuisine in exotic styles of Egyptian, Greek, French, Italian, Indian, Thai, Malaysian, Ethiopian, American, Hawaiian, Japanese, Chinese, Korean, Pacific Rim and fusion cooking.Da Spot's menu also features over 15 combinations of different fruit smoothies.",
       "price": "$",
-      "hours":"Monday - Friday: 10:00am - 2:00 pm"
+      "hours":"Monday - Friday: 10:00am - 2:00 pm",
+      "menu": [
+        "Hot Coffee",
+        "Iced Coffee",
+        "Blended Coffee",
+        "Donuts",
+        "Breakfast",
+        "Lunch Sandwiches"
+      ]
     },
     {
       "name": "Dunkin Donuts",
@@ -96,7 +104,15 @@
       "image": "https://1000logos.net/wp-content/uploads/2017/08/Dunkin-Donuts-Logo.png",
       "description": "Dunkin’ Donuts in Paradise Palms Cafe will keep Hawaii running with high-quality beverage offerings–including freshly-brewed Hot and Iced Coffees–paired perfectly with delicious donuts, bakery good, sandwiches and more.",
       "price": "$",
-      "hours":"Monday - Friday: 7:00am - 5:00 pm"
+      "hours":"Monday - Friday: 7:00am - 5:00 pm",
+      "menu": [
+        "Hot Coffee",
+        "Iced Coffee",
+        "Blended Coffee",
+        "Donuts",
+        "Breakfast",
+        "Lunch Sandwiches"
+      ]
     },
     {
       "name": "Govindas",
@@ -105,7 +121,15 @@
       "description": "Want a sustainable selection for lunch? Try Govinda's, which offers a 100% pure vegetarian menu, with items low in cholesterol and mostly organic. They strive to bring you a healthy and delicious meal at the best possible price.Govinda's uses top quality produce and only the finest quality sea salt. All of the rice, grains, beans, tofu, sugar and flour are certified organic. Their menu never contains any meat or meat by-products, fish, eggs, MSG, iodized salt, preservatives, hydrogenated oils, or artificial colors or flavors.",
       "tags": "Vegan, Salads",
       "price": "$",
-      "hours":"Monday - Friday: 10:00am - 2:00 pm"
+      "hours":"Monday - Friday: 10:00am - 2:00 pm",
+      "menu": [
+        "Hot Coffee",
+        "Iced Coffee",
+        "Blended Coffee",
+        "Donuts",
+        "Breakfast",
+        "Lunch Sandwiches"
+      ]
     },
     {
       "name": "Holoholo Grill",
@@ -113,7 +137,15 @@
       "image": "https://holohologrill.com/wp-content/uploads/2017/03/hg_logo_01_000000_818x276_optimized.png",
       "description": "Holoholo Grill features healthy, locally grown salads, sandwiches, and grab-and-go items at affordable prices. They are committed to using the freshest island-grown ingredients sourced directly from farmers and fishermen. Grab-and-go, breakfast items, or catering for any sized group are also available!",
       "price": "$$$",
-      "hours":"Monday - Friday: 8:00am - 3:00 pm"
+      "hours":"Monday - Friday: 8:00am - 3:00 pm",
+      "menu": [
+        "Hot Coffee",
+        "Iced Coffee",
+        "Blended Coffee",
+        "Donuts",
+        "Breakfast",
+        "Lunch Sandwiches"
+      ]
     },
     {
       "name": "L&L Hawaiian Barbeque",
@@ -121,7 +153,15 @@
       "image": "http://d2eawub7utcl6.cloudfront.net/s0/uploads/locations/440.jpg",
       "description": "Delicious local and Asian-American fusion cuisine served in big portions at reasonable prices! Try delicious L&L favorites like the Hawaiian Barbecue beef, chicken, or short ribs! Enjoy L&L's famous fried chicken katsu, the best in town! Grab-and-go, breakfast items and party packs for groups also available.",
       "price": "$$",
-      "hours":"Monday - Friday: 7:00am - 4:30 pm"
+      "hours":"Monday - Friday: 7:00am - 4:30 pm",
+      "menu": [
+        "Hot Coffee",
+        "Iced Coffee",
+        "Blended Coffee",
+        "Donuts",
+        "Breakfast",
+        "Lunch Sandwiches"
+      ]
     },
     {
       "name": "Lasoon",
@@ -129,7 +169,15 @@
       "image": "http://lasoonhawaii.com/images/lasoonhi_logo.png",
       "description": "Lasoon offers something for everyone with their signature exotic South Indian and Malaysian cuisine. Daily specials include chicken curry, lamb masala, garlic shrimp, seafood curry, spinach tofu, spicy eggplant, curried potatoes, coconut cabbage & over 10 different vegetarian entrees to choose from. Spiciness ranges from mild to very hot.",
       "price": "$$",
-      "hours":"Monday - Friday: 10:30am - 4:00 pm"
+      "hours":"Monday - Friday: 10:30am - 4:00 pm",
+      "menu": [
+        "Hot Coffee",
+        "Iced Coffee",
+        "Blended Coffee",
+        "Donuts",
+        "Breakfast",
+        "Lunch Sandwiches"
+      ]
     },
     {
       "name": "Le Crêpe Café",
@@ -137,7 +185,15 @@
       "image": "https://static.wixstatic.com/media/449d5a_a6be7a604fbf47658c182e48eba92012~mv2_d_2500_2500_s_4_2.png",
       "description": "Le Crêpe Café makes traditional French crêpes, cooked to order in front of customers. They specialize in a flavorsome menu of sweet and savory crêpes and use fresh ingredients, organic when possible. Their utensils are even bio-compostable. Enjoy a crêpe any time of day, as a breakfast, snack, main course, or dessert - close your eyes and you're in Paris!Whether you’re needing a break from the law books or a pick-me-up as you’re headed to or off campus, you’ll also appreciate Le Crêpe Café’s French Roast and espresso drinks. ",
       "price": "$$$",
-      "hours":"Monday - Friday: 8:00am - 5:30 pm"
+      "hours":"Monday - Friday: 8:00am - 5:30 pm",
+      "menu": [
+        "Hot Coffee",
+        "Iced Coffee",
+        "Blended Coffee",
+        "Donuts",
+        "Breakfast",
+        "Lunch Sandwiches"
+      ]
     },
     {
       "name": "Panda Express",
@@ -145,7 +201,15 @@
       "image": "https://upload.wikimedia.org/wikipedia/en/thumb/8/85/Panda_Express_logo.svg/220px-Panda_Express_logo.svg.png",
       "description": "Panda Express serves gourmet Chinese food made with only the freshest ingredients. Famous for its Orange Chicken, they also offer a number of Wok Smart entrées that contain less than 250 calories per serving, such as Shanghai Angus Steak, Kung Pao Chicken, and Broccoli Beef. Other favorites include Beijing Beef, Sweetfire Chicken Breast, and Honey Walnut Shrimp.Panda Express’ offerings can be enjoyed in Panda Bowls, or two and three item plates. Perfect for lunch, dinner or as a pick-me-up snack between classes.",
       "price": "$$$",
-      "hours":"Monday - Friday: 10:30am - 4:30 pm"
+      "hours":"Monday - Friday: 10:30am - 4:30 pm",
+      "menu": [
+        "Hot Coffee",
+        "Iced Coffee",
+        "Blended Coffee",
+        "Donuts",
+        "Breakfast",
+        "Lunch Sandwiches"
+      ]
     },
     {
       "name": "Peace Cafe",
@@ -153,7 +217,15 @@
       "image": "https://pbs.twimg.com/profile_images/743768210667798528/C1Hkj_Rs_400x400.jpg",
       "description": "All of their homestyle recipes, including their Green Garden Burger patties and sauces, are original. Green Garden's food concept is to offer plant-based, all-vegan, organic, natural, non-GMO, and healthy meals with no onion, garlic or other additives, therefore to preserve the original, clean and pure flavors of their food. They have gluten-free offerings daily and their 100% plant-based organic food is fresh, wholesome and delicious.",
       "price": "$$",
-      "hours":"Monday - Friday: 10:00am - 2:00 pm"
+      "hours":"Monday - Friday: 10:00am - 2:00 pm",
+      "menu": [
+        "Hot Coffee",
+        "Iced Coffee",
+        "Blended Coffee",
+        "Donuts",
+        "Breakfast",
+        "Lunch Sandwiches"
+      ]
     },
     {
       "name": "The Bean Counter",
@@ -161,7 +233,15 @@
       "image": "https://www.walltowall.com/media/W1siZiIsIjIwMTUvMDIvMDIvNDRreDkweWp6bF9CZWFuX0NvdW50ZXJfMDIuanBnIl0sWyJwIiwidGh1bWIiLCI2NDB4Il1d/Bean_Counter_02.jpg",
       "description": "Local beans, Local flavor...your Local Coffee Bar.The Bean Counter serves up brewed coffee from the Hawaiian Islands and fulfills your caffeinated desires with a full service espresso bar. Feed your growling stomach with a dizzying array of bagels with homemade spreads, or chow down with our savory wraps, healthy salads and sweet treats.",
       "price": "$",
-      "hours":"Monday - Friday: 7:30am - 6:00 pm"
+      "hours":"Monday - Friday: 7:30am - 6:00 pm",
+      "menu": [
+        "Hot Coffee",
+        "Iced Coffee",
+        "Blended Coffee",
+        "Donuts",
+        "Breakfast",
+        "Lunch Sandwiches"
+      ]
     }
   ]
 }

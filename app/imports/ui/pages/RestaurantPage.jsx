@@ -33,12 +33,15 @@ class RestaurantPage extends React.Component {
               </List>
               <List>
                 <List.Item><Header>Operating Hours</Header></List.Item>
-                <List.Item>Monday - Friday</List.Item>
-                <List.Item>10:00 am - 2:00 pm</List.Item>
+                <List.Item>{this.props.doc.hours}</List.Item>
               </List>
               <Header>Description</Header>
               <p>{this.props.doc.description}</p>
             </Grid.Column>
+              <Header>Menu</Header>
+              <List>
+                  {this.props.doc.menu.map((item) => <List.Item>{item}</List.Item>)}
+              </List>
           </Grid.Row>
           <Grid.Row centered>
             <Header as="h2" textAlign="center">

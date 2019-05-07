@@ -13,59 +13,54 @@ import { Reviews, ReviewSchema } from '../../api/reviews/review';
 class AddReview extends React.Component {
 
   constructor(props) {
-        super(props);
-        this.submit = this.submit.bind(this);
-        this.insertCallback = this.insertCallback.bind(this);
-        this.ChangeRating = this.ChangeRating.bind(this);
-        this.formRef = null;
-    }
+    super(props);
+    this.submit = this.submit.bind(this);
+    this.insertCallback = this.insertCallback.bind(this);
+    this.formRef = null;
+    this.rating = 0;
+  }
 
-    /** Notify the user of the results of the submit. If successful, clear the form. */
-    insertCallback(error) {
-        if (error) {
-            Bert.alert({ type: 'danger', message: `Add failed: ${error.message}` });
-        } else {
-            Bert.alert({ type: 'success', message: 'Add succeeded' });
-            this.formRef.reset();
-        }
+  /** Notify the user of the results of the submit. If successful, clear the form. */
+  insertCallback(error) {
+    if (error) {
+      Bert.alert({ type: 'danger', message: `Add failed: ${error.message}` });
+    } else {
+      Bert.alert({ type: 'success', message: 'Add succeeded' });
+      this.formRef.reset();
     }
+  }
 
-    ChangeRating(e, { rating }) {
-        const value = {};
-        value['rating'] = rating;
-        this.setState(value);
-    }
+  handleRate = (e, { rating }) => { this.rating = rating; }
 
-    /** On submit, insert the data. */
-    submit(data) {
-        const { review, rating, createdAt, restaurantName } = data;
-        const user = Meteor.user().username;
-        Reviews.insert({ restaurantName, user, review, rating, createdAt }, this.insertCallback);
-    }
+  /** On submit, insert the data. */
+  submit(data) {
+    const { review, createdAt, restaurantName } = data;
+    const user = Meteor.user().username;
+    const rating = this.rating;
+    Reviews.insert({ restaurantName, user, review, rating, createdAt }, this.insertCallback);
+  }
 
-    render() {
-        return (
-            <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ ReviewSchema } onSubmit={this.submit}>
-            <Segment>
-                <h1>Add a Review</h1>
-                <Rating icon='star'
-                        defaultRating={1}
-                        maxRating={5}
-                        name='rating'
-                        onRate={this.ChangeRating}
-                />
-                <TextField name='review'/>
-                <SubmitField value='Submit'/>
-                <ErrorsField/>
-                <HiddenField name='createdAt' value={ Date().toLocaleString() }/>
-                <HiddenField name='restaurantName' value={this.props.restaurant.name}/>
-                <HiddenField name='user' value={Meteor.user().username}/>
-            </Segment>
-            </AutoForm>
+  render() {
+    return (
+        <AutoForm ref={(ref) => {
+          this.formRef = ref;
+        }} schema={ReviewSchema} onSubmit={this.submit}>
+          <Segment>
+            <h1>Add a Review</h1>
+            <Rating icon='star' maxRating={5} onRate={this.handleRate}/>
+            <TextField name='review'/>
+            <SubmitField value='Submit'/>
+            <ErrorsField/>
+            <HiddenField name='createdAt' value={Date().toLocaleString()}/>
+            <HiddenField name='restaurantName' value={this.props.restaurant.name}/>
+            <HiddenField name='user' value={Meteor.user().username}/>
+          </Segment>
+        </AutoForm>
     );
   }
 }
+
 AddReview.propTypes = {
-    restaurant: PropTypes.object.isRequired,
+  restaurant: PropTypes.object.isRequired,
 };
 export default AddReview;

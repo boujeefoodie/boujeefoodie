@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Header, Rating, Image, Segment, List, Loader, Button } from "semantic-ui-react";
+import { Grid, Header, Image, List, Loader } from 'semantic-ui-react';
 import { Restaurants } from '/imports/api/restaurant/restaurant';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -8,11 +8,8 @@ import AddReview from '../components/AddReview';
 import Review from '/imports/ui/components/Review';
 import { Reviews } from '../../api/reviews/review';
 
-
 /** A simple static component to render some text for the landing page. */
 class RestaurantPage extends React.Component {
-
-
     render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
@@ -20,17 +17,16 @@ class RestaurantPage extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <Grid divided='vertically'>
-          <Grid.Row centered columns={3}>
-            <Grid.Column centered>
-              <Header as="h2">{this.props.doc.name}</Header>
-              <List>
-                <Header as="h3">{this.props.doc.price}</Header>
-              </List>
-              <Image rounded size="large"
-                     src={this.props.doc.image}/>
+        <Grid divided='vertically' container>
+          <Grid.Row centered columns={2} style={{ paddingTop: '25px' }}>
+            <Grid.Column>
+              <Header as="h1">{this.props.doc.name}</Header>
+              <Image rounded size="large" src={this.props.doc.image}/>
             </Grid.Column>
-            <Grid.Column centered textAlign="right" style={{ paddingTop: '100px' }}>
+            <Grid.Column textAlign="right">
+              <List>
+                <Header as="h1">{this.props.doc.price}</Header>
+              </List>
               <List>
                 <List.Item><Header>Location</Header></List.Item>
                 <List.Item>{this.props.doc.address}</List.Item>
@@ -44,20 +40,16 @@ class RestaurantPage extends React.Component {
               <p>{this.props.doc.description}</p>
             </Grid.Column>
           </Grid.Row>
-          <Grid.Row>
-            <Grid verticalAlign='middle' columns={4} centered>
-              <Segment>
+          <Grid.Row centered>
                 <Header as="h2" textAlign="center">
                   Reviews
                 </Header>
-              </Segment>
+          </Grid.Row>
+          <Grid.Row centered style={{ paddingBottom: '60px' }} >
                 <Grid.Column width={9}>
                     <AddReview restaurant={this.props.doc}/>
                 </Grid.Column>
-              <div >
-              </div>
                 {this.props.reviews.map((review, index) => <Review key={index} review={review}/>)}
-            </Grid>
           </Grid.Row>
         </Grid>
     );

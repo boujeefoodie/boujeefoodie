@@ -38,11 +38,8 @@ class Restaurant extends React.Component {
           <Card.Content>
             <Card.Header>{this.props.restaurant.name}</Card.Header>
             <Card.Meta>{this.props.restaurant.address}</Card.Meta>
+            <Card.Meta>{this.props.restaurant.price}</Card.Meta>
             <Card.Description>{this.props.restaurant.description}</Card.Description>
-          </Card.Content>
-          <Card.Content extra>{this.props.restaurant.price}</Card.Content>
-          <Card.Content extra>
-            {this.props.restaurant.tags}
           </Card.Content>
           <Card.Content extra textAlign='center'>
             <Link to={`/restaurantpage/${this.props.restaurant._id}`}>

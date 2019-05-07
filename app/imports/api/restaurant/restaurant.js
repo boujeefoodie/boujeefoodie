@@ -11,7 +11,7 @@ const RestaurantSchema = new SimpleSchema({
   address: String,
   image: String,
   description: String,
-
+  price: String,
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */
